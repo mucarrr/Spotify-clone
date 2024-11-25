@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+aside {
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 10px;
+}
+@media (max-width: 1200px) {
+  aside {
+    padding: 20px 10px;
+  }
+}
+aside figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+aside figure img {
+  width: 40px;
+}
+aside figure span {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1db954;
+}
+@media (max-width: 992px) {
+  aside figure span {
+    display: none;
+  }
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+aside nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  aside nav a span {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  aside nav a i {
+    font-size: 18px;
+  }
+}
+aside nav a:hover {
+  background-color: #1db954;
+  color: #121212;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: #282828;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+main header {
+  display: flex;
+  background-color: #121212;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px;
+}
+main header form {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.221);
+  width: 100%;
+  border-radius: 5px;
+  max-width: 350px;
+  display: flex;
+}
+@media (max-width: 650px) {
+  main header form {
+    max-width: none;
+  }
+}
+main header form input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 15px;
+  color: rgba(255, 255, 255, 0.78);
+  width: 100%;
+}
+main header form button {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  margin-right: 15px;
+}
+main header nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+@media (max-width: 650px) {
+  main header nav {
+    display: none;
+  }
+}
+main header nav span {
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+main header nav span:hover {
+  color: white;
+}
+main section {
+  flex: 1;
+  margin-top: 20px;
+}
+@media (max-width: 567px) {
+  main section h2 {
+    font-size: 17px;
+  }
+}
+main section .list {
+  position: relative;
+  margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  main section .list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+main section .list .card {
+  background: #121212;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+main section .list .card:hover .play {
+  bottom: 20px;
+  opacity: 1;
+}
+main section .list .card figure {
+  position: relative;
+}
+main section .list .card figure img {
+  width: 100%;
+  border-radius: 10px;
+}
+main section .list .card .play {
+  background-color: #1db954;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  transition: all 0.3s;
+  font-size: 23px;
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+main section .list .card .play:hover {
+  background: #0f6d32;
+  scale: 1.1;
+  rotate: 360deg;
+}
+main section .list .card .play i {
+  pointer-events: none;
+}
+
+.player {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.player .info {
+  display: flex;
+  gap: 10px;
+}
+.player .info div h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.player .info div p {
+  color: rgb(150, 150, 150);
+}
+.player .info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.player audio {
+  width: 40%;
+}
+@media (max-width: 768px) {
+  .player audio {
+    margin-right: 20px;
+  }
+}
+.player .icons {
+  display: flex;
+  font-size: 20px;
+  gap: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .player .icons {
+    display: none;
+  }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate {
+  animation: turn 4s infinite linear;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.78);
+  white-space: nowrap;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.layout {
+  height: calc(100vh - 120px);
+  display: flex;
+  gap: 20px;
+}
+
+/* From Uiverse.io by terenceodonoghue */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 96px;
+  width: 96px;
+  animation: rotate_3922 1.2s linear infinite;
+  background-color: #9b59b6;
+  background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+}
+
+.container span {
+  position: absolute;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  background-color: #9b59b6;
+  background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+}
+
+.container span:nth-of-type(1) {
+  filter: blur(5px);
+}
+
+.container span:nth-of-type(2) {
+  filter: blur(10px);
+}
+
+.container span:nth-of-type(3) {
+  filter: blur(25px);
+}
+
+.container span:nth-of-type(4) {
+  filter: blur(50px);
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-color: #fff;
+  border: solid 5px #ffffff;
+  border-radius: 50%;
+}
+
+@keyframes rotate_3922 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */
